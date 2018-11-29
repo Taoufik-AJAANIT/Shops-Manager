@@ -117,3 +117,39 @@ router.get('/prefered', checkAuth, (req, res) => {
                 })
         })
 })
+
+
+// Remove from preferred shops
+
+router.delete('/preferred/:shopId', checkAuth, (req, res) => {
+    let shopId = req.params.shopId;
+    let userId = req.userId;
+
+    PreferredShop.find({
+        shopId,
+        userId
+    }).exec()
+        .then((result) => {
+            if (!result.length) {
+                return res.json({
+                    messege: 'This shop does not appear in your prefered shops ',
+                })
+            }
+            let _id = result[0]._id
+            PreferredShop.findByIdAndDelete({ _id }).exec()
+                .then(() => {
+                    return res.json({
+                        messege: 'Shop removed from your  prefered shops !',
+                    })
+                })
+                .catch(err => {
+                    res.json({
+                        messege: 'Error while Removing shop from your preffered shops!' + err
+                    })
+                })
+
+        })
+})
+
+
+module.exports = router
