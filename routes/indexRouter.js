@@ -82,3 +82,38 @@ router.post('/', checkAuth, (req, res) => {
         })
 
 })
+
+// fetch preferredShops
+
+router.get('/prefered', checkAuth, (req, res) => {
+    let userId = req.userId;
+    PreferredShop.find({ userId: userId })
+        .then(user_sPreferreds => {
+            // array that will contains all prefered shops
+            let shops = [];
+            let shopIds = [];
+            user_sPreferreds.map(preferred => {
+                shopIds.push(preferred.shopId)
+            })
+            // ids of prefereds shops in shopIds
+
+            Shop.find({
+                '_id': {
+                    $in: shopIds
+                }
+            })
+                .exec()
+                .then(results => {
+                    results.map(shop => {
+                        let { shopName, imgUrl } = shop;
+                        let key = shop._id;
+                        shops.push({
+                            shopName,
+                            imgUrl,
+                            key
+                        })
+                    })
+                    res.status(200).json({ shops })
+                })
+        })
+})
