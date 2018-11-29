@@ -1,6 +1,7 @@
 {
     "env": {
         "jwt_KEY": "test",
-        "db_PASS": "shops123"
+        "db_PASS": "shops123",
+        "PORT" : 5000
     }
 }

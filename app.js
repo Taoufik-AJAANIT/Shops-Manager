@@ -37,5 +37,5 @@ mongoose.connect('mongodb+srv://shopsApi:' + process.env.db_PASS + '@cluster0-xu
 
 
 // set up Port
-const port = 5000 || process.env.PORT;
+const port = process.env.PORT;
 app.listen(port, () => console.log(`Server listening on port ${port} ...`));
