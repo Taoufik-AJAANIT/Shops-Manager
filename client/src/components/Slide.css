@@ -1,0 +1,10 @@
+.block{
+    height: auto;
+    width: auto;
+    background-size: cover;
+}
+
+.block .image {
+    width: auto;
+    height: auto;
+}
