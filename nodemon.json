@@ -1,0 +1,6 @@
+{
+    "env": {
+        "jwt_KEY": "test",
+        "db_PASS": "shops123"
+    }
+}
