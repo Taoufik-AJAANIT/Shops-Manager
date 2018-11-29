@@ -1,0 +1,26 @@
+#auth{
+    width: 50% ;
+    margin: 0 0 10% 25% ;
+    font-size: 20px;
+    
+}
+
+#nav{
+    width: 99%; 
+    margin: 0 0 1% 0 ; 
+    height: 100% ;
+    font-size: 20px;
+    /* margin-top: 5%; */
+    
+}
+
+#submit{
+    margin-top: 20px
+}
+
+.Breadcrumb{
+    width: 100%;
+    margin-top: 3px;
+    position: relative;
+    
+}
