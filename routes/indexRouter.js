@@ -47,3 +47,38 @@ router.get('/', checkAuth, (req, res) => {
             })
         })
 })
+
+
+// like a shop & add it to preferredShops 
+
+router.post('/', checkAuth, (req, res) => {
+    let userId = req.userId;
+    let shopId = req.body.shopId;
+    PreferredShop.find({
+        userId,
+        shopId
+    }).exec()
+        .then(result => {
+            if (result.length) {
+                return res.json({ messege: 'you alredy liked this Shop :)' })
+            }
+
+            let preferredShop = new PreferredShop({
+                userId,
+                shopId
+            })
+            preferredShop.save()
+                .then(() => {
+                    res.json({
+                        messege: 'Shop added succefuly to your prefered shops ',
+                    })
+                })
+                .catch(err => {
+                    res.json({
+                        messege: 'Error while adding shop to your preffered shops !'
+                    })
+                });
+
+        })
+
+})
