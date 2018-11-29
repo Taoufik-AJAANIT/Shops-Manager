@@ -62,7 +62,7 @@ class Slide extends Component {
             headers,
         }
 
-        fetch('http://localhost:5000/preferred/' + shopId, options)
+        fetch('/preferred/' + shopId, options)
             .then(response => {
                 if (response.status === 200) {
                     return response.json();

@@ -132,7 +132,7 @@ class Auth extends Component {
                 body: JSON.stringify(this.state.fields)
             }
 
-            const request = new Request(`http://localhost:5000/auth/${route}`, options)
+            const request = new Request(`/auth/${route}`, options)
             fetch(request)
                 .then(response => {
                     return response.json();

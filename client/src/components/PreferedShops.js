@@ -38,7 +38,7 @@ class PreferedShops extends Component {
             const options = {
                 headers,
             }
-            fetch('http://localhost:5000/prefered', options)
+            fetch('/prefered', options)
                 .then(response => {
                     if (response.status === 200) {
                         return response.json();

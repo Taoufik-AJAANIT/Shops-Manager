@@ -34,7 +34,7 @@ class Shop extends Component {
             body
         }
 
-        fetch('http://localhost:5000/' + param, options)
+        fetch('/' + param, options)
             .then(response => {
                 if (response.status === 200) {
                     return response.json();

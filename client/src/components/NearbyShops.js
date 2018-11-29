@@ -21,7 +21,7 @@ class NearbyShops extends Component {
             const options = {
                 headers,
             }
-            fetch('http://localhost:5000/', options)
+            fetch('/', options)
                 .then(response => {
                     if (response.status === 200) {
                         return response.json();
