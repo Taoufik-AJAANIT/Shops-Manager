@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { CardDeck } from 'reactstrap';
 import Shop from './Shop'
-import './nearbyShops.css';
+import './NearbyShops.css';
 import ReactLoading from 'react-loading';
 
 class NearbyShops extends Component {

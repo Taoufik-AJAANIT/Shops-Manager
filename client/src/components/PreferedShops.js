@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Slide from './Slide'
 import { Alert } from 'reactstrap';
 import ReactLoading from 'react-loading';
-import './nearbyShops.css';
+import './NearbyShops.css';
 
 class PreferedShops extends Component {
     constructor(props) {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { BreadcrumbItem, Breadcrumb, Button } from 'reactstrap';
-import NearbyShops from './nearbyShops'
+import NearbyShops from './NearbyShops'
 import PreferedShops from './PreferedShops'
 
 export default class Navbar extends React.Component {
