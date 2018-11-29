@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const Shop = require("../models/Shop.js")
 const PreferredShop = require("../models/PreferredShop")
-const checkAuth = require("../midlware/checkAuth")
+const checkAuth = require("../middlwares/checkAuth")
 const getPosition = require("../getPosition")
 
 
