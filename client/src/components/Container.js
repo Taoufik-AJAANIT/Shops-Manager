@@ -46,7 +46,6 @@ class Container extends Component {
 
     //Login method : to set  isloggedin to true when connection succed
     connection() {
-        console.log(sessionStorage.getItem('jwToken'))
         this.setState({
             isLoggedIn: true
         })
