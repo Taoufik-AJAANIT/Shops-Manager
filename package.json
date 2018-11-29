@@ -4,7 +4,7 @@
   "description": "Unated Remote coding challenge",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node app.js",
     "server": "nodemon app.js"
   },
   "author": "Taoufik AJAANIT",
