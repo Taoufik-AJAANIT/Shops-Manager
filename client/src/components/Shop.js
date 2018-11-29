@@ -4,6 +4,7 @@ import Alert from './Alert'
 import {
     Card, Button, CardImg, CardTitle, ButtonGroup, CardBody, CardSubtitle
 } from 'reactstrap';
+import API_url from "../API_url"
 
 
 class Shop extends Component {
@@ -34,7 +35,7 @@ class Shop extends Component {
             body
         }
 
-        fetch('/' + param, options)
+        fetch(`${API_url}/` + param, options)
             .then(response => {
                 if (response.status === 200) {
                     return response.json();

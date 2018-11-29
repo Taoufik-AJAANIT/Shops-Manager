@@ -3,6 +3,7 @@ import Slide from './Slide'
 import { Alert } from 'reactstrap';
 import ReactLoading from 'react-loading';
 import './NearbyShops.css';
+import API_url from "../API_url"
 
 class PreferedShops extends Component {
     constructor(props) {
@@ -38,7 +39,7 @@ class PreferedShops extends Component {
             const options = {
                 headers,
             }
-            fetch('/prefered', options)
+            fetch(`${API_url}/prefered`, options)
                 .then(response => {
                     if (response.status === 200) {
                         return response.json();

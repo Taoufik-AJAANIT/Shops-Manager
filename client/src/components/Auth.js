@@ -4,6 +4,7 @@ import {
 import React, { Component } from 'react';
 import Messege from './Messege';
 import ReactLoading from 'react-loading';
+import API_url from "../API_url"
 
 
 
@@ -132,7 +133,7 @@ class Auth extends Component {
                 body: JSON.stringify(this.state.fields)
             }
 
-            const request = new Request(`/auth/${route}`, options)
+            const request = new Request(`${API_url}/auth/${route}`, options)
             fetch(request)
                 .then(response => {
                     return response.json();

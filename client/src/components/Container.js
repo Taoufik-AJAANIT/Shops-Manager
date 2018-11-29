@@ -3,6 +3,7 @@ import ReactLoading from 'react-loading';
 import Auth from './Auth'
 import Navbar from './Navbar'
 import './Container.css';
+import API_url from "../API_url"
 
 
 
@@ -25,7 +26,8 @@ class Container extends Component {
         const options = {
             headers,
         }
-        fetch('/', options)
+        console.log(API_url)
+        fetch(`${API_url}/`, options)
             .then(response => {
                 if (response.status === 200) {
                     this.connection()

@@ -3,6 +3,7 @@ import { CardDeck } from 'reactstrap';
 import Shop from './Shop'
 import './NearbyShops.css';
 import ReactLoading from 'react-loading';
+import API_url from "../API_url"
 
 class NearbyShops extends Component {
     constructor(props) {
@@ -21,7 +22,7 @@ class NearbyShops extends Component {
             const options = {
                 headers,
             }
-            fetch('/', options)
+            fetch(`${API_url}/`, options)
                 .then(response => {
                     if (response.status === 200) {
                         return response.json();
