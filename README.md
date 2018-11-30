@@ -12,6 +12,35 @@ Real Time  based application shows nearby shops by getting user's position &  ca
 * Front end on client folder .
 * BAck end on API folder .
 
+### Installing
+
+```
+git clone https://github.com/Taoufik-AJAANIT/Shops-Manager.git
+```
+
+```
+cd Shops-Manager
+```
+
+* To install server : 
+```
+npm install --prefix API
+```
+
+* To install client : 
+```
+npm install --prefix client
+```
+
+* to run server : 
+```
+npm run server --prefix API
+```
+
+* To run client :
+```
+npm start --prefix client
+```
 
 
 ## Built With
