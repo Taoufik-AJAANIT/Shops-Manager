@@ -37,6 +37,12 @@ npm install --prefix client
 npm run server --prefix API
 ```
 
+### note
+
+note that the default API url for the react app is heroku API's url .
+to fetch the local server please change the url in  /client/src/API_url.js file 
+to 127.0.0.1:5000
+
 * To run client :
 ```
 npm start --prefix client
