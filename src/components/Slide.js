@@ -8,6 +8,7 @@ import {
     CardImg,
 
 } from 'reactstrap';
+import API_url from "../API_url"
 
 
 class Slide extends Component {
@@ -62,7 +63,7 @@ class Slide extends Component {
             headers,
         }
 
-        fetch('/preferred/' + shopId, options)
+        fetch(`${API_url}/preferred/${shopId}`, options)
             .then(response => {
                 if (response.status === 200) {
                     return response.json();
