@@ -7,7 +7,10 @@ Real Time  based application shows nearby shops by getting user's position &  ca
 
  you need to install nodejs 
 
+## Structure
 
+* Front end on client folder .
+* BAck end on API folder .
 
 
 
@@ -21,11 +24,13 @@ Real Time  based application shows nearby shops by getting user's position &  ca
 ## Features
 
 * Front end Validation .
+* Front end Validation .
 * Backend Validation .
 * JWT based Authontication .
 * Passwords encryption .
 * Database hosted on MongoAtlas .
 * Routes Protection .
+* Routes & Coontrollers .
 * No page refreshs .
 * giving rondom coordinates to user every refresh considering that user is moving (for now) .
 * user (after authontication) can display the list of shops sorted by distance .
