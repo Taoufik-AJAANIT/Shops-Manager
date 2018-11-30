@@ -71,10 +71,10 @@ class PreferedShops extends Component {
         while (!isFitched) {
             return <ReactLoading />
         }
-        return <div className='nearby'>
-            <Alert color="light"> {text}</Alert>
-            {slides}
-        </div>
+        return  <div className='nearby'>
+                    <Alert color="light"> {text}</Alert>
+                    {slides}
+                </div>
 
     }
 }

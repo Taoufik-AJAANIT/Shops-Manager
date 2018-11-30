@@ -35,7 +35,7 @@ class Shop extends Component {
             body
         }
 
-        fetch(`${API_url}/` + param, options)
+        fetch(`${API_url}/${param}`, options)
             .then(response => {
                 if (response.status === 200) {
                     return response.json();
@@ -59,20 +59,20 @@ class Shop extends Component {
     }
 
     render() {
-        return <div className='carda'>
-            <Card>
-                <CardImg top src={this.props.imgUrl} alt="Card image cap" />
-                <CardBody>
-                    <CardTitle>{this.props.shopName}</CardTitle>
-                    <CardSubtitle>Distance : {this.props.distance} Km</CardSubtitle>
-                    <ButtonGroup>
-                        <Button onClick={this.handleClick} name='POST' outline color="success">Like</Button>
-                        <Button outline name='DELETE' color="danger">Dislike</Button>
-                    </ButtonGroup>
-                </CardBody>
-            </Card>
-            <Alert modal={this.state.modal} title={this.state.text} toggle={this.toggle} button='cool' ></Alert>
-        </div >
+        return  <div className='carda'>
+                    <Card>
+                        <CardImg top src={this.props.imgUrl} alt="Card image cap" />
+                        <CardBody>
+                            <CardTitle>{this.props.shopName}</CardTitle>
+                            <CardSubtitle>Distance : {this.props.distance} Km</CardSubtitle>
+                            <ButtonGroup>
+                                <Button onClick={this.handleClick} name='POST' outline color="success">Like</Button>
+                                <Button outline name='DELETE' color="danger">Dislike</Button>
+                            </ButtonGroup>
+                        </CardBody>
+                    </Card>
+                    <Alert modal={this.state.modal} title={this.state.text} toggle={this.toggle} button='cool' ></Alert>
+                </div >
     }
 }
 

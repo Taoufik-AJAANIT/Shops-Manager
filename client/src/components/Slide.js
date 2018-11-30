@@ -8,6 +8,7 @@ import {
     CardImg,
 
 } from 'reactstrap';
+import API_url from "../API_url"
 
 
 class Slide extends Component {
@@ -50,7 +51,6 @@ class Slide extends Component {
     }
 
     handleClick(e) {
-        // alert('name',e.target)
         let shopId = e.target.id
 
         const headers = new Headers();
@@ -62,7 +62,7 @@ class Slide extends Component {
             headers,
         }
 
-        fetch('/preferred/' + shopId, options)
+        fetch(`${API_url}/preferred/${shopId}`, options)
             .then(response => {
                 if (response.status === 200) {
                     return response.json();
@@ -79,8 +79,6 @@ class Slide extends Component {
 
     render() {
         const { activeIndex } = this.state;
-
-        // console.dir(this.props.items)
         const slides = this.props.items.map((item) => {
             return (
                 <CarouselItem

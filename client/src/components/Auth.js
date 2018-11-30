@@ -187,26 +187,26 @@ class Auth extends Component {
         let disactive = !Regester ? 'Login' : 'Regester'
 
         return <Form className="form">
-            <Messege color='secondary' messeges={[disactive + ' Form :']} />
-            <FormGroup>
-                <Label for="email" >Email</Label>
-                <Input type="email" name="email" id="email" placeholder="test@shops.com" onChange={this.handleChange} />
-            </FormGroup>
-            <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
-                <Label for="Password" className="mr-sm-2">Password</Label>
-                <Input type="password" name="password" id="Password" placeholder="don't tell!" onChange={this.handleChange} />
-            </FormGroup>
-            {this.renderConfirmPassword()}
-            <Messege color='dark' messeges={this.state.errors} />
-            <Button id='submit' size="lg" block onClick={this.handleClick} >{disactive}</Button>
-            <Breadcrumb className='Breadcrumb'>
-                <BreadcrumbItem>
-                    <Button outline color="secondary" onClick={this.switchForm}>{active}
-                    </Button>
-                </BreadcrumbItem>
-                <BreadcrumbItem active>{disactive}</BreadcrumbItem>
-            </Breadcrumb>
-        </Form>
+                    <Messege color='secondary' messeges={[disactive + ' Form :']} />
+                    <FormGroup>
+                        <Label for="email" >Email</Label>
+                        <Input type="email" name="email" id="email" placeholder="test@shops.com" onChange={this.handleChange} />
+                    </FormGroup>
+                    <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
+                        <Label for="Password" className="mr-sm-2">Password</Label>
+                        <Input type="password" name="password" id="Password" placeholder="don't tell!" onChange={this.handleChange} />
+                    </FormGroup>
+                    {this.renderConfirmPassword()}
+                    <Messege color='dark' messeges={this.state.errors} />
+                    <Button id='submit' size="lg" block onClick={this.handleClick} >{disactive}</Button>
+                    <Breadcrumb className='Breadcrumb'>
+                        <BreadcrumbItem>
+                            <Button outline color="secondary" onClick={this.switchForm}>{active}
+                            </Button>
+                        </BreadcrumbItem>
+                        <BreadcrumbItem active>{disactive}</BreadcrumbItem>
+                    </Breadcrumb>
+                </Form>
     }
 }
 

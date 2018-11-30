@@ -71,15 +71,15 @@ class Container extends Component {
             return <ReactLoading type='cylon' />
         }
         if (isLoggedIn) {
-            return <div id='nav'>
-                <Navbar disconnection={this.disconnection} />
-            </div>
+            return  <div id='nav'>
+                        <Navbar disconnection={this.disconnection} />
+                    </div>
         }
 
 
-        return <div id='auth'>
-            <Auth connection={this.connection} />
-        </div>
+        return  <div id='auth'>
+                    <Auth connection={this.connection} />
+                </div>
 
     }
 

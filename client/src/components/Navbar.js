@@ -24,21 +24,21 @@ export default class Navbar extends React.Component {
         let disactive = !preferred ? 'Preferred Shops' : 'Nearby Shops';
         let content = preferred ? <PreferedShops /> : <NearbyShops />;
 
-        return <div id='nav'>
+        return  <div id='nav'>
 
-            <Breadcrumb className='Breadcrumb'>
-                <BreadcrumbItem active>{active}</BreadcrumbItem>
-                <BreadcrumbItem>
-                    <Button outline color="secondary" onClick={this.handleClick}>{disactive}
-                    </Button>
-                </BreadcrumbItem>
-                <BreadcrumbItem>
-                    <Button onClick={this.props.disconnection} outline color="warning">Logout
+                    <Breadcrumb className='Breadcrumb'>
+                        <BreadcrumbItem active>{active}</BreadcrumbItem>
+                        <BreadcrumbItem>
+                            <Button outline color="secondary" onClick={this.handleClick}>{disactive}
                             </Button>
-                </BreadcrumbItem>
+                        </BreadcrumbItem>
+                        <BreadcrumbItem>
+                            <Button onClick={this.props.disconnection} outline color="warning">Logout
+                                    </Button>
+                        </BreadcrumbItem>
 
-            </Breadcrumb>
-            <div>{content}</div>
-        </div>
+                    </Breadcrumb>
+                    <div>{content}</div>
+                </div>
     }
 }

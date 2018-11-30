@@ -64,13 +64,13 @@ class NearbyShops extends Component {
         }
 
 
-        return <div className='nearby'>
-            <CardDeck>
-                {this.state.shops.map(shop =>
-                    <Shop action='like' id={shop.key} key={shop.key} distance={shop.distance} shopName={shop.shopName} imgUrl={shop.imgUrl} />
-                )}
-            </CardDeck>
-        </div>
+        return  <div className='nearby'>
+                    <CardDeck>
+                        {this.state.shops.map(shop =>
+                            <Shop action='like' id={shop.key} key={shop.key} distance={shop.distance} shopName={shop.shopName} imgUrl={shop.imgUrl} />
+                        )}
+                    </CardDeck>
+                </div>
 
     }
 }
