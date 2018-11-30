@@ -22,12 +22,12 @@ git clone https://github.com/Taoufik-AJAANIT/Shops-Manager.git
 cd Shops-Manager
 ```
 
-* To install server : 
+* To install server dependencies : 
 ```
 npm install --prefix API
 ```
 
-* To install client : 
+* To install client dependencies: 
 ```
 npm install --prefix client
 ```
