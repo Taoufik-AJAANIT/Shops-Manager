@@ -5,6 +5,7 @@ import React, { Component } from 'react';
 import Messege from './Messege';
 import ReactLoading from 'react-loading';
 import API_url from "../API_url"
+import validateForm from './validateForm' ;
 
 
 
@@ -14,7 +15,7 @@ class Auth extends Component {
         this.state = {
             fields: {},
             errors: [],
-            Regester: false,
+            isRegestering: false,
             isFitched: true
         }
         this.handleChange = this.handleChange.bind(this);
@@ -31,68 +32,7 @@ class Auth extends Component {
         this.clearFeilds();
     }
 
-
-    // Fron-end Validation Funtion
-    validateForm() {
-
-        let fields = this.state.fields;
-        let errors = [];
-        let formIsValid = true;
-
-
-        if (!fields.email) {
-            formIsValid = false;
-            errors.push("*Please enter your email-ID.");
-
-        }
-
-        if (typeof fields.email !== "undefined") {
-            //regular expression for email validation
-            var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
-            if (!pattern.test(fields.email)) {
-                formIsValid = false;
-                errors.push("*Please enter valid email-ID.");
-            }
-        }
-
-
-        if (!fields.password) {
-            formIsValid = false;
-            errors.push("*Please enter your password.");
-        }
-
-
-        //only check that if the user is Regestering
-        if (this.state.Regester) {
-
-            if (!fields.password2) {
-                formIsValid = false;
-                errors.push("*and Please confirme your password.");
-            }
-
-
-
-            if (fields.password2 !== fields.password) {
-                formIsValid = false;
-                errors.push("*PAsswords does not match !!.");
-            }
-        }
-
-        this.setState({
-            errors: [...errors],
-            fields: {}
-        })
-
-        this.clearFeilds();
-
-        if (!formIsValid)
-            this.setState({
-                isFitched: true
-            })
-
-        return formIsValid;
-
-    }
+    
 
     clearFeilds() {
         document.getElementById('email').value = '';
@@ -112,18 +52,32 @@ class Auth extends Component {
     }
 
     switchForm() {
-        this.setState({ Regester: !this.state.Regester, errors: [] });
+        this.setState({ isRegestering: !this.state.isRegestering, errors: [] });
     }
 
     handleClick() {
+        let { formIsValid, errors } = validateForm(this.state.fields,this.state.isRegestering);
 
-        this.setState({
-            isFitched: false
-        })
+        if (!formIsValid){
+            
 
-        if (this.validateForm()) {
+            this.setState({
+                errors: [...errors],
+                fields: {},
+                isFitched : true
+            })
 
-            const route = this.state.Regester ? 'regester' : 'login';
+            this.clearFeilds();
+
+        }
+
+        else {
+
+            this.setState({
+                isFitched: false
+            })
+
+            const route = this.state.isRegestering ? 'regester' : 'login';
             const headers = new Headers();
             headers.append('Content-Type', 'application/json');
 
@@ -167,7 +121,7 @@ class Auth extends Component {
 
 
     renderConfirmPassword() {
-        if (this.state.Regester) {
+        if (this.state.isRegestering) {
             return <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
                 <Label for="Password2" className="mr-sm-2">Confirme Password</Label>
                 <Input type="password" name="password2" id="Password2" placeholder="confime that :)" onChange={this.handleChange} />
@@ -178,13 +132,13 @@ class Auth extends Component {
 
 
     render() {
-        let { isFitched, Regester } = this.state;
+        let { isFitched, isRegestering } = this.state;
 
         while (!isFitched) {
             return <ReactLoading type='bubbles' />
         }
-        let active = Regester ? 'Login' : 'Regester'
-        let disactive = !Regester ? 'Login' : 'Regester'
+        let active = isRegestering ? 'Login' : 'Regester'
+        let disactive = !isRegestering ? 'Login' : 'Regester'
 
         return <Form className="form">
                     <Messege color='secondary' messeges={[disactive + ' Form :']} />
