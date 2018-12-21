@@ -22,12 +22,12 @@ git clone https://github.com/Taoufik-AJAANIT/Shops-Manager.git
 cd Shops-Manager
 ```
 
-* To install server : 
+* To install server dependencies : 
 ```
 npm install --prefix API
 ```
 
-* To install client : 
+* To install client dependencies: 
 ```
 npm install --prefix client
 ```
@@ -36,6 +36,12 @@ npm install --prefix client
 ```
 npm run server --prefix API
 ```
+
+### note
+
+note that the default API url for the react app is heroku API's url .
+to fetch the local server please change the url in  /client/src/API_url.js file 
+to 127.0.0.1:5000
 
 * To run client :
 ```
